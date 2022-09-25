@@ -1,0 +1,40 @@
+<script setup>
+  // Import icons
+  import BiGithub from '~icons/bi/github'
+  import BiYoutube from '~icons/bi/youtube'
+  import BiBoxArrowUpRight from '~icons/bi/box-arrow-up-right'
+  // import HeroiconsOutlineExternalLink from "~icons/heroicons-outline/external-link";
+
+  // Get projects
+  const query = await queryContent('projects/').sort({_file: -1, $numeric: true}).find()
+</script>
+
+<template>
+  <div class="flex flex-row gap-5">
+      <div v-for="project in query" :key="project._path">
+        <div class="flex flex-col flex-shrink-0 px-8 py-12 justify-between h-full w-80 bg-blue-100">
+          <div>
+            <div class="flex flex-row justify-between">
+              <p class="text-base"> {{ project.date }} </p>
+              <div class="flex flex-row justify-center gap-2">
+                  <a v-show="project.youtube" :href="project.youtube" target="_blank">
+                    <BiYoutube class="w-8 h-8 text-red-500" />
+                  </a>
+                  <a v-show="project.github" :href="project.github" target="_blank">
+                    <BiGithub class="w-8 h-8 text-red-500" />
+                  </a>
+                  <a v-show="project.external" :href="project.external" target="_blank">
+                    <BiBoxArrowUpRight class="w-8 h-8 text-red-500" />
+                  </a>
+
+                </div> 
+            </div>
+            <p class="font-bold text-xl">{{ project.title }}</p>
+            <p class="text-lg">{{ project.description }}</p>
+          </div>
+            <br />
+            <p class="text-xs">{{ project.tech }}</p>
+          </div>
+      </div>
+  </div>
+</template>
