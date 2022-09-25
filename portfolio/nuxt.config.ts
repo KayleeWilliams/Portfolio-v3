@@ -7,5 +7,11 @@ export default defineNuxtConfig({
   ],
   content: {
     // https://content.nuxtjs.org/api/configuration
+  },
+//   plugins: [
+//     { src: "@/plugins/aos", ssr: false, mode: "client" },
+//   ],
+  purgeCSS: {
+    whitelist: ["aos-init", "aos-animate", "data-aos-delay", "data-aos-duration", "fade-up", "zoom-in"],
   }
 })
