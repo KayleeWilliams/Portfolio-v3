@@ -1,7 +1,8 @@
 
 <template>
-  <div class="px-32 w-full h-full flex flex-col justify-center items-center">
-    <!-- <div class="h-screen"/> -->
+  <div class="text-white px-32 w-full h-screen snap-mandatory scroll-smooth scroll-smooth ">
+    <projects />
+    <featured />
     <projects />
   </div>
 </template>
