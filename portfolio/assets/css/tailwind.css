@@ -4,4 +4,6 @@
 
 body {
     background-color: #201A23;
+    position: relative;
+    overflow-y: scroll;
 }
