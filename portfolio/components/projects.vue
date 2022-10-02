@@ -24,42 +24,42 @@
     <p class="text-4xl font-bold text-center"> Other Projects </p>
     <div class="flex flex-row flex-wrap gap-4 justify-center">
         <a v-for="(project, index) in query" :key="project._path" class="group transition ease-in-out duration-300 hover:ease-in-out hover:transition hover:duration-300 hover:-translate-y-2" :href="project.github" target="_blank">
-          <div v-if="show || (index <= 2)" class="w-80 h-full flex flex-col flex-shrink-0 drop-shadow-xl rounded-md bg-center bg-cover" :style="backgrounds[index].image" data-aos="fade-up" data-aos-delay="300">
-            <div class="bg-primary/95 w-full h-full px-6 py-8 bg-cover bg-center flex flex-col justify-between rounded-md">
+          <div v-if="show || (index <= 2)" class="w-80 h-full flex flex-col flex-shrink-0 drop-shadow-xl rounded-md bg-center bg-cover" data-aos="fade-up" data-aos-delay="300">
+            <div class="bg-primary w-full h-full px-6 py-8 bg-cover bg-center flex flex-col justify-between rounded-md">
 
               <!-- Top Bar -->
               <div>
-                <div class="flex flex-row justify-between">
-                  <p class="text-xs"> {{ project.date }} </p>
+                <div class="flex flex-row items-baseline justify-between mb-2">
+                  <p class="text-base"> {{ project.date }} </p>
                   <div class="flex flex-row justify-center gap-2">
                       <a v-show="project.youtube" :href="project.youtube" target="_blank">
-                        <BiYoutube class="w-6 h-6 transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-105  text-link hover:text-highlight " />
+                        <BiYoutube class="w-6 h-6 text-pink-600 hover:text-pink-900 transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-105" />
                       </a>
                       <a v-show="project.github" :href="project.github" target="_blank">
-                        <BiGithub class="w-6 h-6 transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-105 text-link hover:text-highlight" />
+                        <BiGithub class="w-6 h-6 text-pink-600 hover:text-pink-900 transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-105" />
                       </a>
                       <a v-show="project.external" :href="project.external" target="_blank">
-                        <BiBoxArrowUpRight class="w-6 h-6 transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-105 text-link hover:text-highlight" />
+                        <BiBoxArrowUpRight class="w-6 h-6 text-pink-600 hover:text-pink-900 transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-105" />
                       </a>
                   </div> 
                 </div>
 
                 <!-- Title & Description -->
-                <p class="font-bold text-lg group-hover:underline group-hover:decoration-highlight group-hover:decoration-2 group-hover:underline-offset-4">{{ project.title }}</p>
-                <p class="text-base">{{ project.description }}</p>
+                <p class="font-bold text-xl group-hover:underline group-hover:decoration-pink-900 group-hover:decoration-[3px] group-hover:underline-offset-[6px]">{{ project.title }}</p>
+                <p class="text-base mt-1">{{ project.description }}</p>
                 </div>
 
                 <!-- Tech list -->
                 <div>
                   <br />
-                  <p class="text-xs">{{ project.tech }}</p>
+                  <p class="text-xs text-purple-200 mt-4">{{ project.tech }}</p>
                 </div>
               </div>
             </div>
         </a>
     </div>
 
-    <button v-if="!show" @click="show = true" class="bg-link px-6 py-4 drop-shadow-lg rounded-xl transition ease-in-out duration-300 hover:bg-highlight" data-aos="fade-up" data-aos-delay="500"> Show More </button>
-    <button v-if="show" @click="show = false" class="bg-link px-6 py-4 drop-shadow-lg rounded-xl transition ease-in-out duration-300 hover:bg-highlight" data-aos="fade-up" data-aos-delay="500"> Show Less </button>
+    <button v-if="!show" @click="show = true" class="bg-gradient-to-tr from-pink-500 to-pink-700 hover:bg-none hover:bg-pink-900 text-pink-200 font-semibold px-6 py-4 drop-shadow-lg rounded-full transition ease-in-out duration-300" data-aos="fade-up" data-aos-delay="500"> Show More </button>
+    <button v-if="show" @click="show = false" class="bg-gradient-to-tr from-pink-500 to-pink-700 hover:bg-none hover:bg-pink-900 text-pink-200 font-semibold px-6 py-4 drop-shadow-lg rounded-full transition ease-in-out duration-300" data-aos="fade-up" data-aos-delay="500"> Show Less </button>
   </div>
 </template>

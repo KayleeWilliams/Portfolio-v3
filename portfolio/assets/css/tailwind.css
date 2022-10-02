@@ -3,7 +3,13 @@
 @tailwind utilities;
 
 body {
-    background-color: #201A23;
+    /* background-color: #201A23; */
+    background-color: #1C0F2C;
+    /* background-image: radial-gradient(circle, #1a1423, #1c1523, #1d1723, #1f1823, #201a23); */
+    /* background-image: radial-gradient(circle, #d198c1, #9e7698, #6f5670, #453748, #201a23); */
+    /* background-image: linear-gradient(to right top, #d198c1, #9e7698, #6f5670, #453748, #201a23); */
+    background-attachment: fixed;
+
     position: relative;
     overflow-y: scroll;
 }

@@ -11,9 +11,9 @@
         const path = item._file.replace("project.md", "graphic.webp")
 
         if ((index & 1) == 0) {
-            position.value[index] = {class: "order-first mr-[-24px]", image: `background-image: url('/content/${path}')` }
+            position.value[index] = {class: "order-last ml-[-24px]", image: `/content/${path}` }
         } else {
-            position.value[index] = {class: "order-last ml-[-24px]", image: `background-image: url('/content/${path}')` }
+            position.value[index] = {class: "order-first mr-[-24px]", image: `/content/${path}` }
         }
     }); 
 
@@ -27,37 +27,40 @@
                     <div class="flex flex-row justify-center content-center items-center h-256" data-aos="fade-up" data-aos-delay="300" >
                         
                         <!-- Image -->
-                        <div class="w-96 h-80 bg-cover bg-center rounded-lg drop-shadow-xl" :class="position[index].class" :style="position[index].image" />
-                        
+                        <div class="w-96 h-80 bg-purple-700 opacity-60 hover:opacity-100 transistion ease-in-out duration-500 rounded-lg shrink-0 drop-shadow-xl" :class="position[index].class"> 
+                            <a class=""> 
+                                <img class="w-full h-full object-cover opacity-100 rounded-lg" :src="position[index].image" /> 
+                            </a>
+                        </div> 
+
                         <!-- Project Info -->
-                        <div class="bg-primary w-80 h-full px-6 py-8 bg-cover bg-center flex flex-col justify-between z-10 drop-shadow-xl rounded-md">
+                        <div class="bg-primary w-96 h-full px-6 py-8 bg-cover bg-center flex flex-col justify-between z-10 drop-shadow-xl rounded-lg shrink-0">
 
                             <!-- Top Bar -->
                             <div>
-                                <div class="flex flex-row justify-between">
-                                    <p class="text-xs"> {{ project.date }} </p>
-                                    <div class="flex flex-row justify-center gap-2">
-                                        <a v-show="project.youtube" :href="project.youtube" target="_blank">
-                                            <BiYoutube class="w-6 h-6 transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-105  text-link hover:text-highlight " />
-                                        </a>
-                                        <a v-show="project.github" :href="project.github" target="_blank">
-                                            <BiGithub class="w-6 h-6 transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-105 text-link hover:text-highlight" />
-                                        </a>
-                                        <a v-show="project.external" :href="project.external" target="_blank">
-                                            <BiBoxArrowUpRight class="w-6 h-6 transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-105 text-link hover:text-highlight" />
-                                        </a>
-                                    </div> 
-                                </div>
+                                <div class="flex flex-row items-baseline justify-between mb-2">
+                                <p class="text-base"> {{ project.date }} </p>
+                                <div class="flex flex-row justify-center gap-2">
+                                    <a v-show="project.youtube" :href="project.youtube" target="_blank">
+                                        <BiYoutube class="w-6 h-6 text-pink-600 hover:text-pink-900 transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-105" />
+                                    </a>
+                                    <a v-show="project.github" :href="project.github" target="_blank">
+                                        <BiGithub class="w-6 h-6 text-pink-600 hover:text-pink-900 transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-105" />
+                                    </a>
+                                    <a v-show="project.external" :href="project.external" target="_blank">
+                                        <BiBoxArrowUpRight class="w-6 h-6 text-pink-600 hover:text-pink-900 transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-105" />
+                                    </a>
+                                </div> 
+                            </div>
 
                                 <!-- Title & Description -->
-                                <p class="font-bold text-lg group-hover:underline group-hover:decoration-highlight group-hover:decoration-2 group-hover:underline-offset-4">{{ project.title }}</p>
-                                <p class="text-base">{{ project.description }}</p>
+                                <p class="font-bold text-2xl">{{ project.title }}</p>
+                                <p class="text-base mt-1">{{ project.description }}</p>
                             </div>
 
                             <!-- Tech list -->
                             <div>
-                                <br />
-                                <p class="text-xs">{{ project.tech }}</p>
+                                <p class="text-base text-purple-200 mt-4">{{ project.tech }}</p>
                             </div>
                         </div>
                     </div>
