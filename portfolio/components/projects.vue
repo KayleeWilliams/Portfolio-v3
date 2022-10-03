@@ -3,29 +3,29 @@
   import BiGithub from '~icons/bi/github'
   import BiYoutube from '~icons/bi/youtube'
   import BiBoxArrowUpRight from '~icons/bi/box-arrow-up-right'
-  // import HeroiconsOutlineExternalLink from "~icons/heroicons-outline/external-link";
 
   let show = ref(false)
 
   // Get projects
   const query = await queryContent('projects/').sort({_file: -1, $numeric: true}).find()
-
+  
   const backgrounds = ref({})
 
   query.forEach(function (item, index) {
     const path = item._file.replace("project.md", "graphic.webp")
     backgrounds.value[index] = { image: `background-image: url('/content/${path}')` }
   });
-
 </script>
 
 <template>
   <div class="h-screen flex flex-col items-center justify-center gap-8"> 
-    <p class="text-4xl font-bold text-center"> Other Projects </p>
-    <div class="flex flex-row flex-wrap gap-4 justify-center">
+    <p class="text-4xl font-bold text-center" data-aos="fade-up" data-aos-delay="200"> Other Projects </p>
+    <div class="grid grid-cols-3 gap-4 justify-center"> 
         <a v-for="(project, index) in query" :key="project._path" class="group transition ease-in-out duration-300 hover:ease-in-out hover:transition hover:duration-300 hover:-translate-y-2" :href="project.github" target="_blank">
-          <div v-if="show || (index <= 2)" class="w-80 h-full flex flex-col flex-shrink-0 drop-shadow-xl rounded-md bg-center bg-cover" data-aos="fade-up" data-aos-delay="300">
-            <div class="bg-primary w-full h-full px-6 py-8 bg-cover bg-center flex flex-col justify-between rounded-md">
+          <div v-if="show || (index <= 2)" class="w-80 h-full flex flex-col flex-shrink-0 drop-shadow-xl rounded-lg bg-center bg-cover" data-aos="fade-up" data-aos-delay="300">
+            
+            <!-- Can add images here later? -->
+            <div class="bg-primary w-full h-full px-6 py-8 bg-cover bg-center flex flex-col justify-between rounded-lg"> 
 
               <!-- Top Bar -->
               <div>
@@ -51,7 +51,6 @@
 
                 <!-- Tech list -->
                 <div>
-                  <br />
                   <p class="text-xs text-purple-200 mt-4">{{ project.tech }}</p>
                 </div>
               </div>

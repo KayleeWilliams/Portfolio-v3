@@ -11,25 +11,25 @@
         const path = item._file.replace("project.md", "graphic.webp")
 
         if ((index & 1) == 0) {
-            position.value[index] = {class: "order-last ml-[-24px]", image: `/content/${path}` }
+            position.value[index] = {class: "order-last ml-[-24px]", image: `/content/${path}`, delay: 300}
         } else {
-            position.value[index] = {class: "order-first mr-[-24px]", image: `/content/${path}` }
+            position.value[index] = {class: "order-first mr-[-24px]", image: `/content/${path}`, delay: 400}
         }
     }); 
 
 </script>
 
 <template>
-    <div class="px-32 flex flex-col h-full content-center justify-center gap-y-8"> 
-            <p class="text-4xl font-bold text-center"> Featured Projects </p>
+    <div class="flex flex-col h-full content-center justify-center gap-y-8"> 
+            <p class="text-4xl font-bold text-center" data-aos="fade-up" data-aos-delay="200"> Featured Projects </p>
             <div class="flex flex-col gap-y-4">
                 <div v-for="(project, index) in query" :key="project._path">
-                    <div class="flex flex-row justify-center content-center items-center h-256" data-aos="fade-up" data-aos-delay="300" >
+                    <div class="flex flex-row justify-center content-center items-center" data-aos="fade-up" :data-aos-delay="position[index].delay" >
                         
                         <!-- Image -->
                         <div class="w-96 h-80 bg-purple-700 opacity-60 hover:opacity-100 transistion ease-in-out duration-500 rounded-lg shrink-0 drop-shadow-xl" :class="position[index].class"> 
-                            <a class=""> 
-                                <img class="w-full h-full object-cover opacity-100 rounded-lg" :src="position[index].image" /> 
+                            <a :href="project.github" target="_blank"> 
+                                <img class="w-full h-full object-cover opacity-100 rounded-lg" :src="position[index].image" :alt="project.title"/> 
                             </a>
                         </div> 
 
