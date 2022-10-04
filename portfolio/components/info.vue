@@ -15,16 +15,16 @@ import TeenyiconsFigmaOutline from '~icons/teenyicons/figma-outline'
 <template>
     <div class="flex flex-col h-full items-start justify-center text-left px-72 gap-y-8">
         <div class="">
-            <h1 class="text-4xl font-bold">About Me</h1>
-            <p class="text-2xl mt-4 w-[27em]"> 
+            <h1 class="text-4xl font-bold" data-aos="fade-up" data-aos-delay="200">About Me</h1>
+            <p class="text-2xl mt-4 w-[27em]"  data-aos="fade-up" data-aos-delay="300"> 
                 Hi, I'm Kaylee Williams. I am a software engineer currently studying Computer Science at university and will be graduating in 2023. 
                 <br /><br />  Outside of programming I enjoy watching and being involed with Esports.
             </p>
         </div>
 
         <div class="">
-            <h1 class="text-4xl font-bold mb-4">My Toolbox</h1>
-            <div class="grid grid-cols-5 gap-4">
+            <h1 class="text-4xl font-bold mb-4"  data-aos="fade-up" data-aos-delay="500">My Toolbox</h1>
+            <div class="grid grid-cols-5 gap-4"  data-aos="fade-up" data-aos-delay="600">
                 
                 <a class="w-16 h-16 group flex flex-col relative items-center gap-y-5 text-pink-500 hover:text-pink-900 transition ease-in-out duration-300 ">
                     <MdiLanguagePython class="w-16 h-16" />             

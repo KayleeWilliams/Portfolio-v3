@@ -1,6 +1,6 @@
 <script setup>
 const about = ref();
-const go = () => about.value.scrollIntoView({behavior: "smooth"});
+const go = () => about.value.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 
 useHead({
   bodyAttrs: {
@@ -16,5 +16,6 @@ useHead({
     <div ref="about"><info class="snap-center shrink-0" /></div>
     <featured class="snap-center shrink-0" />
     <projects class="snap-center shrink-0" />
+    <contact class="snap-center shrink-0" />
   </div>
 </template>
