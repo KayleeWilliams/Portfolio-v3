@@ -18,9 +18,9 @@
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col items-center justify-center gap-8 py-40"> 
-    <p class="text-4xl font-bold text-center" data-aos="fade-up" data-aos-delay="200"> Other Projects </p>
-    <div class="grid grid-cols-3 gap-4 justify-center"> 
+  <div class="min-h-screen flex flex-col items-center justify-center gap-8 py-20 lg:py-40"> 
+    <p class="text-3xl md:text-4xl font-bold text-center" data-aos="fade-up" data-aos-delay="200"> Other Projects </p>
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 justify-center"> 
         <a v-for="(project, index) in query" :key="project._path" class="group transition ease-in-out duration-300 hover:ease-in-out hover:transition hover:duration-300 hover:-translate-y-2" :href="project.github" target="_blank">
           <div v-if="show || (index <= 2)" class="w-80 h-full flex flex-col flex-shrink-0 drop-shadow-xl rounded-lg bg-center bg-cover" data-aos="fade-up" data-aos-delay="300">
             
