@@ -58,7 +58,7 @@
         </a>
     </div>
 
-    <button v-if="!show" @click="show = true" class="bg-gradient-to-tr from-pink-500 to-pink-700 hover:bg-none hover:bg-pink-900 text-pink-200 font-semibold px-6 py-4 drop-shadow-lg rounded-full transition ease-in-out duration-300" data-aos="fade-up" data-aos-delay="500"> Show More </button>
+    <button v-if="!show" @click="show = true" class="-mt-8 md:mt-0 bg-gradient-to-tr from-pink-500 to-pink-700 hover:bg-none hover:bg-pink-900 text-pink-200 font-semibold px-6 py-4 drop-shadow-lg rounded-full transition ease-in-out duration-300" data-aos="fade-up" data-aos-delay="500"> Show More </button>
     <button v-if="show" @click="show = false" class="bg-gradient-to-tr from-pink-500 to-pink-700 hover:bg-none hover:bg-pink-900 text-pink-200 font-semibold px-6 py-4 drop-shadow-lg rounded-full transition ease-in-out duration-300" data-aos="fade-up" data-aos-delay="500"> Show Less </button>
   </div>
 </template>

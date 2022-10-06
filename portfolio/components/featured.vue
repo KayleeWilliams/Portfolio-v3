@@ -11,9 +11,9 @@
         const path = item._file.replace("project.md", "graphic.webp")
 
         if ((index & 1) == 0) {
-            position.value[index] = {class: "order-last ml-[-24px]", image: `/content/${path}`, delay: 300}
+            position.value[index] = {class: "order-last md:ml-[-24px]", image: `/content/${path}`, delay: 300}
         } else {
-            position.value[index] = {class: "order-first mr-[-24px]", image: `/content/${path}`, delay: 400}
+            position.value[index] = {class: "order-first md:mr-[-24px]", image: `/content/${path}`, delay: 400}
         }
     }); 
 
@@ -21,20 +21,20 @@
 
 <template>
     <div class="flex flex-col h-full content-center justify-center gap-y-8"> 
-            <p class="text-4xl font-bold text-center" data-aos="fade-up" data-aos-delay="200"> Featured Projects </p>
+            <p class="text-3xl md:text-4xl font-bold text-center" data-aos="fade-up" data-aos-delay="200"> Featured Projects </p>
             <div class="flex flex-col gap-y-4">
                 <div v-for="(project, index) in query" :key="project._path">
                     <div class="flex flex-row justify-center content-center items-center" data-aos="fade-up" :data-aos-delay="position[index].delay" >
                         
                         <!-- Image -->
-                        <div class="w-96 h-80 bg-purple-700 opacity-60 hover:opacity-100 transistion ease-in-out duration-500 rounded-lg shrink-0 drop-shadow-xl" :class="position[index].class"> 
+                        <div class="w-0 h-0 md:w-96 md:h-80 bg-purple-700 opacity-60 hover:opacity-100 transistion ease-in-out duration-500 rounded-lg shrink-0 drop-shadow-xl" :class="position[index].class" > 
                             <a :href="project.github" target="_blank"> 
                                 <img class="w-full h-full object-cover opacity-100 rounded-lg" :src="position[index].image" :alt="project.title"/> 
                             </a>
                         </div> 
 
                         <!-- Project Info -->
-                        <div class="bg-primary w-96 h-full px-6 py-8 bg-cover bg-center flex flex-col justify-between z-10 drop-shadow-xl rounded-lg shrink-0">
+                        <div class="bg-primary w-80 md:w-96 h-full px-6 py-8 bg-cover bg-center flex flex-col justify-between z-10 drop-shadow-xl rounded-lg shrink-0">
 
                             <!-- Top Bar -->
                             <div>
@@ -54,13 +54,13 @@
                             </div>
 
                                 <!-- Title & Description -->
-                                <p class="font-bold text-2xl">{{ project.title }}</p>
+                                <p class="font-bold text-xl md:text-2xl">{{ project.title }}</p>
                                 <p class="text-base mt-1">{{ project.description }}</p>
                             </div>
 
                             <!-- Tech list -->
                             <div>
-                                <p class="text-base text-purple-200 mt-4">{{ project.tech }}</p>
+                                <p class="text-xs md:text-base text-purple-200 mt-4">{{ project.tech }}</p>
                             </div>
                         </div>
                     </div>

@@ -12,10 +12,10 @@ useHead({
 
 <template>
   <div class="p-4 lg:px-32 w-full h-screen text-white font-body flex flex-col gap-y-64">
-    <!-- <hero @scroll="go" class="snap-center shrink-0" /> -->
-    <!-- <div ref="about"><info class="snap-center shrink-0" /></div> -->
-    <!-- <featured class="snap-center shrink-0" />  -->
+    <hero @scroll="go" class="snap-center shrink-0" />
+    <div ref="about"><info class="snap-center shrink-0" /></div>
+    <featured class="snap-center shrink-0" /> 
     <projects class="snap-center shrink-0" />
-    <!-- <contact class="snap-center shrink-0" /> -->
+    <contact class="snap-center shrink-0" />
   </div>
 </template>
