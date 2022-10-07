@@ -3,6 +3,14 @@ const about = ref();
 const go = () => about.value.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 
 useHead({
+  title: 'Kaylee Williams Portfolio',
+  meta: [
+    { name: 'description', content: "Hi I'm Kaylee. A software engineer. Come check out some of my cool projects!" }
+  ],
+  link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+  ],
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
   bodyAttrs: {
     class: "snap-y snap-mandatory"
   }
