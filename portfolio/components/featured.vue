@@ -8,12 +8,12 @@
     const position = ref({})
 
     query.forEach(function (item, index) { 
-        const path = item._file.replace("project.md", "graphic.png")
+        const path = `${item._file.split(/\/|\./)[2]}.webp`
 
         if ((index & 1) == 0) {
-            position.value[index] = {class: "order-last md:ml-[-24px]", image: `/content/${path}`, delay: 300}
+            position.value[index] = {class: "order-last md:ml-[-24px]", image: `/${path}`, delay: 300}
         } else {
-            position.value[index] = {class: "order-first md:mr-[-24px]", image: `/content/${path}`, delay: 400}
+            position.value[index] = {class: "order-first md:mr-[-24px]", image: `/${path}`, delay: 400}
         }
     }); 
 
