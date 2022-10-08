@@ -8,7 +8,7 @@
     const position = ref({})
 
     query.forEach(function (item, index) { 
-        const path = item._file.replace("project.md", "graphic.webp")
+        const path = item._file.replace("project.md", "graphic.png")
 
         if ((index & 1) == 0) {
             position.value[index] = {class: "order-last md:ml-[-24px]", image: `/content/${path}`, delay: 300}
