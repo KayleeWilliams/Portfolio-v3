@@ -12,7 +12,7 @@
                 <MdiEmail class="w-16 h-16 text-pink-500 hover:text-pink-900 transition ease-in-out duration-300" />
             </a>
 
-            <a href="https://www.linkedin.com/in/kaylee-williams-1559251bb" target="_blank">
+            <a href="www.linkedin.com/in/kaylee-w" target="_blank">
                 <MdiLinkedin class="w-16 h-16 text-pink-500 hover:text-pink-900 transition ease-in-out duration-300" />
             </a>
         </div>
